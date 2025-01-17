@@ -1,0 +1,7 @@
+{
+  "name": "nrktechnologies",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
