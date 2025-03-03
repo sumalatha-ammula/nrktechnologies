@@ -1,20 +1,106 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding login" >
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="profile-img">
+        <img src="/assets/profile.jpeg" alt="" srcset="" >
+      </ion-col>
+      <ion-col size="12" class="profile-img">
+        <ion-list lines="none" style="display: flex;justify-content: center !important;">
+          <ion-item lines="none">
+        <h2>Naresh Kallem</h2>
+      </ion-item>
+      </ion-list>
+      </ion-col>
+      <ion-col class="profile-img" size="12" style="font-size:13px !important">
+        <ion-list lines="none" style="display: flex;justify-content: center !important;">
+          <ion-item lines="none" style="font-size:13px;font-weight:500">
+        Sr. Technical Lead – Automation Testing
+      </ion-item>
+      </ion-list>
+      </ion-col>
+      <ion-col class="emaildetails profile-img" size="12">
+        <ion-list lines="none" >
+          <ion-item lines="none" >
+            <span><i class="fa-regular fa-envelope"></i></span>&nbsp;
+            <span style="font-size:9px !important" class="details" >k.naresh745&#64;gmail.com</span>
+          </ion-item>
+          
+            <span class="divider"></span>
+          <ion-item lines="none">
+            <span><i class="fa-brands fa-linkedin"></i></span>&nbsp;
+            <span style="font-size:9px !important"><a href="https://www.linkedin.com/in/naresh-reddy-kallem-4b794a45/" target="_blank" id="linkdin">LinkedIn Profile</a></span>
+          </ion-item>
+        </ion-list>
+        
+      </ion-col>
+      
+      <ion-col size="12">
+        <ion-list  lines="none" style="width: 100%;" (click)="isclicked()">
+          <ion-item lines="none" style="background-color:#B44E0059 !important;padding:7px;font-size:15px !important;border-radius:6px !important">
+            <span class="iconstyle"><ion-icon  [name]="isclick ? 'caret-up-outline' : 'chevron-down'"></ion-icon></span>
+            <span style=" font-weight: 600;
+    font-size: 16px;">About me</span>
+          </ion-item>
+          <div *ngIf="isclick" class="content">
+          <p >
+            I’m <strong>Naresh Kallem</strong>, a <strong>Senior Technical Lead</strong> with over 
+            <strong>13+ years of experience</strong> in automation testing and quality assurance. 
+            I specialize in creating robust, scalable, and efficient test automation solutions 
+            for <strong>web, mobile, and desktop applications</strong>, primarily in the 
+            <strong>Banking, Finance, Insurance, and E-Commerce (BFSI)</strong> domains.
+          </p>
+          <p>
+                   I am proficient in automation tools like <strong>Selenium</strong> (C#, Java, Python), 
+            <strong>Playwright</strong> (TypeScript, JavaScript), <strong>BDD frameworks</strong> 
+            (Cucumber, SpecFlow), and mobile automation tools such as 
+            <strong>Appium, Espresso</strong>, and <strong>XCTest/XCUITest</strong>. My expertise 
+            also includes designing frameworks for desktop application testing using 
+            <strong>WinAppDriver</strong>, enabling seamless automation of Windows-based apps.
+          </p>
+      
+        </div>
+        </ion-list>
+        
+      </ion-col>
+      <ion-col  class="login-page" size="12">
+         
+          <ion-list class="login-header" lines="none">
+            <span>
+          Login
+        </span>
+           
+      </ion-list>
+        
+         </ion-col>
+         <ion-col size="12">
+          <ion-list class="login-info" lines="none">
+            <p>Username: <span>admin</span></p>
+            <p>Password: <span>admin&#64;1234</span></p>
+          </ion-list>
+         </ion-col>
+          
+        
+         <ion-col size="12">         
+          <ion-list class="login-form" lines="none">
+            <ion-item lines="none">
+              <ion-input placeholder="Username or Email Address" type="text" [(ngModel)]="usernames"  title="field-username" name="field-name" #usernamefield></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+              <ion-input placeholder="Password" type="password" [(ngModel)]="passwords" data-testid="password"  name="field-pass"  aria-label="username-field" tabindex="0" #password></ion-input>
+            </ion-item>
+            <ion-item>
+              <button #loginButton class="login-button" (click)="login()" type="button" id="login">
+                Login
+              </button>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+        <ion-col size="12">
+          <img src="/assets/wallpaper-bot-deco.png" alt="">
+        </ion-col>   
+    </ion-row>    
+  </ion-grid>
+  </ion-content>
+  
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
-</ion-content>

@@ -1,0 +1,100 @@
+
+
+<ion-content >
+    <ion-row class="formsheader">
+    <ion-col size="6" class="formimg">
+      <img src="assets/NRK-Technologies.png" alt="" srcset="">
+    </ion-col>
+    <ion-col size="6" class="formicon">
+      <i class="fa-duotone fa-solid fa-right-from-bracket" [routerLink]='["/home"]'></i></ion-col>
+  </ion-row>
+  <ion-row style="padding:30px 0px !important">
+    <ion-col size="12">
+  <span style="color:#1B52A2;font-weight:600">Welcome To NRK Technologies</span>&nbsp;<span>POC Application</span>
+    </ion-col>
+  </ion-row>
+  <ion-row class="forms">
+    <ion-col size="6">
+      <ion-list lines="none" (click)="datapage('e')" id="elements" name="elements-name">
+      <ion-item lines="none">
+        <span>
+          <ion-icon name="menu-outline"></ion-icon>
+        </span>
+      </ion-item>      
+      <ion-item lines="none" >
+        <label>       
+          Elements
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col>
+    <ion-col size="6" id="forms" >
+      <ion-list lines="none" (click)="datapage('f')" name="forms-name" id="forms">
+      <ion-item lines="none">
+        <span>
+          <ion-icon name="reader-outline"></ion-icon>
+        </span>
+      </ion-item>      
+      <ion-item lines="none">
+        <label>       
+          Forms
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col>
+    <ion-col size="6">
+      <ion-list lines="none" (click)="datapage('a')" id="alerts" name="alerts-name">
+      <ion-item lines="none">
+        <span>
+          <ion-icon name="copy-outline"></ion-icon>
+        </span>
+      </ion-item>      
+      <ion-item lines="none">
+        <label>       
+          Alerts, Frame &amp; Windows	
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col>
+    <ion-col size="6">
+      <ion-list lines="none" (click)="datapage('w')" id="widges" name="widges-name">
+      <ion-item lines="none">
+        <span>
+          <i class="fa-sharp-duotone fa-solid fa-boxes-stacked"></i>
+        </span>
+      </ion-item>      
+      <ion-item lines="none">
+        <label>       
+          Widges
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col>
+    <ion-col size="6">
+      <ion-list lines="none" (click)="datapage('i')" id="interactions" name="interactions-name">
+      <ion-item lines="none">
+        <span>
+          <i class="fa-sharp fa-solid fa-recycle"></i>        </span>
+      </ion-item>      
+      <ion-item lines="none">
+        <label>       
+          Interactions
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col>
+    <ion-col size="6">
+      <ion-list lines="none" (click)="datapage('b')" id="bookstore" name="bookstore-name">
+      <ion-item lines="none">
+        <span>
+          <ion-icon name="book-outline"></ion-icon>                 </span>
+      </ion-item>      
+      <ion-item lines="none">
+        <label>       
+          Book Store Application
+         </label>
+      </ion-item>  
+    </ion-list>   
+    </ion-col> 
+  </ion-row>
+</ion-content>

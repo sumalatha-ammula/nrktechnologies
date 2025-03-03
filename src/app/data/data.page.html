@@ -1,0 +1,1667 @@
+
+<ion-content [scrollY]="true" >
+  <div class="ion-content-scroll-host">
+  <ion-row class="formsheader">
+  <ion-col size="6" class="formimg">
+    <img src="assets/NRK-Technologies.png" alt="" srcset="">
+  </ion-col>
+  <ion-col size="6" class="formicon">
+    <i class="fa-duotone fa-solid fa-right-from-bracket" [routerLink]='["/home"]' id="logout"></i></ion-col>
+</ion-row>
+<ion-grid style="padding: 20px;">
+<ion-row  class="elements" *ngIf="isdisplay">
+    <ion-col size="12" >
+      <ion-list  lines="none" class="datacontent"  style="margin-top:0 !important">
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span >Elements</span>
+        </ion-item>
+        <ion-item (click)="elements('element')" id="icon-element"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='element'">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('textbox')" [class.active]="activeItem === 'textbox'" id="datatextbox" name="textbox-name">Text Box</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('checkbox')" [class.active]="activeItem === 'checkbox'" id="checkbox" name="checkbox-name">Check Box</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('radio')" [class.active]="activeItem === 'radio'" id="dataradio" name="radio-name">Radio Button</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('webTables')" [class.active]="activeItem === 'webTables'" id="dataweb" name="web-name">Web Tables</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('buttons')" [class.active]="activeItem === 'buttons'" id="databutton" name="button-name">Buttons</ion-item>      
+        <ion-item lines="none" (click)="setActiveItem('links')" [class.active]="activeItem === 'links'" id="links" name="links-name">Links</ion-item> 
+        <ion-item lines="none" (click)="setActiveItem('Broken')" [class.active]="activeItem === 'Broken'" id="broken" name="broken-name">Broken Links – Images</ion-item> 
+        <ion-item lines="none" (click)="setActiveItem('Upload')" [class.active]="activeItem === 'Upload'" id="upload" name="upload-name">Upload and Download</ion-item> 
+        <ion-item lines="none" (click)="setActiveItem('Dynamic')" [class.active]="activeItem === 'Dynamic'" id="dynamic" name="dynamic-name">Dynamic Properties</ion-item> 
+
+
+
+            </ion-list>
+    </ion-col> 
+    
+    <ion-col size="12" >
+      <ion-list  lines="none" class="datacontent" >
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span >Forms</span> 
+        </ion-item>
+        <ion-item (click)="elements('forms')"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='forms'">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('Practice')" [class.active]="activeItem === 'Practice'">Practice Form</ion-item>      
+            </ion-list>
+    </ion-col> 
+  
+    <ion-col size="12" class="maintitle">
+      <ion-list  lines="none" class="datacontent" >
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span > Alerts, Frame & Windows</span>
+        </ion-item>
+        <ion-item (click)="elements('alerts')"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='alerts'">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('Browser')" [class.active]="activeItem === 'Browser'">Browser Windows</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Alerts')" [class.active]="activeItem === 'Alerts'">Alerts</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Frames')" [class.active]="activeItem === 'Frames'">Frames</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Nested')" [class.active]="activeItem === 'Nested'">Nested Frames</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Modal')" [class.active]="activeItem === 'Modal'">Modal Dialogs</ion-item>       
+            </ion-list>
+    </ion-col> 
+  
+    <ion-col size="12" >
+      <ion-list  lines="none" class="datacontent " >
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span > Widgets</span>
+        </ion-item>
+        <ion-item (click)="elements('widges')"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='widges'">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('Accordian')" [class.active]="activeItem === 'Accordian'">Accordian</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Auto')" [class.active]="activeItem === 'Auto'">Auto Complete</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Date')" [class.active]="activeItem === 'Date'">Date Picker</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Slider')" [class.active]="activeItem === 'Slider'">Slider</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Progress')" [class.active]="activeItem === 'Progress'">Progress Bar</ion-item>      
+        <ion-item lines="none" (click)="setActiveItem('Tabs')" [class.active]="activeItem === 'Tabs'">Tabs</ion-item> 
+        <ion-item lines="none" (click)="setActiveItem('Tool')" [class.active]="activeItem === 'Tool'">Tool Tip</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Menu')" [class.active]="activeItem === 'Menu'">Menu</ion-item> 
+        <ion-item lines="none" (click)="setActiveItem('Select')" [class.active]="activeItem === 'Select'">Select Menu</ion-item> 
+            </ion-list>
+    </ion-col> 
+      
+    <ion-col size="12" >
+      <ion-list  lines="none" class="datacontent " >
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span >Interactions
+          </span>
+        </ion-item>
+        <ion-item (click)="elements('interactions')"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='interactions'">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('Sortable')" [class.active]="activeItem === 'Sortable'">Sortable</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Selectable')" [class.active]="activeItem === 'Selectable'">Selectable</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Resizable')" [class.active]="activeItem === 'Resizable'">Resizable</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Droppable')" [class.active]="activeItem === 'Droppable'">Droppable</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Dragabble')" [class.active]="activeItem === 'Dragabble'">Dragabble</ion-item>
+            </ion-list>
+    </ion-col> 
+   
+    <ion-col size="12" >
+      <ion-list  lines="none" class="datacontent " >
+        <ion-item lines="none">
+          <span ><i class="fa-sharp fa-thin fa-notes"></i></span>
+          <span >Book Store Application
+          </span>
+        </ion-item>
+        <ion-item (click)="elements('book')"><i class="fa-solid fa-caret-down"></i></ion-item>
+      </ion-list>
+     </ion-col>
+    <ion-col size="12" *ngIf="iselements=='book' && isdisplay">
+       <ion-list lines="none" class="subtitle">
+        <ion-item lines="none" (click)="setActiveItem('Login')" [class.active]="activeItem === 'Login'">Login</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Book')" [class.active]="activeItem === 'Book'">Book Store</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Profile')" [class.active]="activeItem === 'Profile'">Profile</ion-item>
+        <ion-item lines="none" (click)="setActiveItem('Store')" [class.active]="activeItem === 'Store'"><a href="https://nrktechnologies.com/rest-api/docs/" >Book Store Api</a></ion-item>
+            </ion-list>
+    </ion-col>
+</ion-row>
+<ion-row *ngIf="activeItem === 'textbox' && !isdisplay">
+  <ion-col size="12">         
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;">Text Box</label>
+     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-col size="12" style="margin-top: -10px;">
+    <ion-list  class="form-container"  style="width: 80%;">
+      
+      <ion-item lines="none">
+        <ion-input placeholder="Full Name" type="text" [(ngModel)]="fullname"  #fullnameInput ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Email" type="email" [(ngModel)]="email" #emailInput  ></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Current Address" type="text" [(ngModel)]="cadress"  name="textfield-cadress" #currentadress></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-input placeholder="Permanent Address" type="text" [(ngModel)]="padress"  name="textfield-padress" #permanentadress></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <button   (click)="submit()" id="submitButton" name="button-name">Submit</button>
+      </ion-item>
+    </ion-list>
+    </ion-col>
+</ion-row>
+<ion-row *ngIf="isSubmit && activeItem === 'textbox' && !isdisplay">
+  <ion-col size="12" >
+    <ion-list lines="none" class="output-container ">
+      <ion-item lines="none">
+        <h2>Submitted Data</h2>
+      </ion-item>
+      <ion-item lines="none">
+        <label><strong>Full Name</strong></label>:<span>{{fullname}}</span>
+      </ion-item>
+      <ion-item lines="none">
+        <label><strong>Email</strong></label>:<span>{{email}}</span>
+      </ion-item>
+      <ion-item lines="none">
+        <label><strong>Current Address</strong></label>:<span>{{cadress}}</span>
+      </ion-item>
+      <ion-item lines="none">
+        <label><strong>Permanent Address</strong></label>:<span>{{padress}}</span>
+      </ion-item>
+    </ion-list>
+
+  </ion-col>
+</ion-row>
+<ion-row *ngIf="activeItem === 'checkbox'  && !isdisplay" >
+  <ion-col size="12" >
+    <ion-list lines="none">
+      <ng-container *ngFor="let node of treeData">
+        <div>
+          <ion-item lines="none">
+            <ion-icon
+              slot="start"
+              [name]="node.expanded ? 'chevron-down' : 'chevron-forward'"
+              (click)="toggleNode(node)"
+            ></ion-icon>
+            <ion-checkbox
+              slot="start"
+              [(ngModel)]="node.checked"
+              (ionChange)="toggleCheckbox(node)"
+            ></ion-checkbox>
+            {{ node.label }}
+          </ion-item>
+    
+          <div *ngIf="node.expanded" style="margin-left: 20px;">
+            <ng-container *ngFor="let child of node.children">
+              <ion-item lines="none">
+                <ion-icon
+                  slot="start"
+                  [name]="child.expanded ? 'chevron-down' : 'chevron-forward'"
+                  *ngIf="child.children"
+                  (click)="toggleNode(child)"
+                ></ion-icon>
+                <ion-checkbox
+                  slot="start"
+                  [(ngModel)]="child.checked"
+                  (ionChange)="toggleCheckbox(child)"
+                ></ion-checkbox>
+                {{ child.label }}
+              </ion-item>
+    
+              <div *ngIf="child.expanded" style="margin-left: 20px;">
+                <ng-container *ngFor="let subChild of child.children">
+                  <ion-item lines="none">
+                    <ion-icon
+                    slot="start"
+                    [name]="subChild.expanded ? 'chevron-down' : 'chevron-forward'"
+                    *ngIf="subChild.children"
+                    (click)="toggleNode(subChild)"
+                  ></ion-icon>
+                    <ion-checkbox
+                      slot="start"
+                      [(ngModel)]="subChild.checked"
+                      (ionChange)="toggleCheckbox(subChild)"
+                    ></ion-checkbox>
+                    {{ subChild.label }}
+                  </ion-item>
+                  <div *ngIf="subChild.expanded" style="margin-left: 20px;">
+                    <ng-container *ngFor="let innerchild of subChild.children">
+                      <ion-item lines="none">
+                        <ion-icon
+                        slot="start"
+                        [name]="innerchild.expanded ? 'chevron-down' : 'chevron-forward'"
+                        *ngIf="innerchild.children"
+                        (click)="toggleNode(innerchild)"
+                      ></ion-icon>
+                        <ion-checkbox
+                          slot="start"
+                          [(ngModel)]="innerchild.checked"
+                          (ionChange)="toggleCheckbox(innerchild)"
+                        ></ion-checkbox>
+                        {{ innerchild.label }}
+                      </ion-item>
+                    </ng-container>
+                  </div>
+                </ng-container>
+              </div>
+            </ng-container>
+          </div>         
+        </div>
+        
+      </ng-container>
+    </ion-list>
+  </ion-col>
+    <ion-col size="12" class="subchilds">
+      <ion-list lines="none">       
+        <span  *ngFor="let item of checkedItems;let i=index" > <ion-label *ngIf="i==0"><strong>You have selected:</strong></ion-label> {{ item}},</span>
+    </ion-list>
+      </ion-col> 
+</ion-row>
+<ion-row *ngIf="activeItem === 'radio'  && !isdisplay" >
+  <ion-col size="12">         
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;">Radio Button</label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-col size="12" class="subchilds">
+    <ion-list>
+    <label>Do You Like the Site?</label>
+  </ion-list>
+  <ion-list class="radiolist">
+    <ion-radio-group value="custom-checked" *ngFor="let data of radio;let i=index" [(ngModel)]="selectedvalue">
+      <ion-radio  value="{{data.label}}"   labelPlacement="end" [disabled]="i === 2" id={{data.id}}  name="{{data.name}}">{{data.label}}</ion-radio>
+      <!-- <ion-label >{{data.label}}</ion-label> -->
+    </ion-radio-group>
+    <p style="margin-top:6px;">Selected Value here : <span style="color:red" *ngIf="selectedvalue==''">You have selected none</span><span style="color:green" *ngIf="selectedvalue!=''"> You have selected {{selectedvalue}}</span></p>
+  </ion-list>  
+  </ion-col>
+</ion-row>
+<ion-grid *ngIf="activeItem === 'buttons'  && !isdisplay">
+<ion-row>
+  <ion-col size="12">         
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;"> Button</label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+  </ion-col>
+  <ion-row style="padding-left: 16px;"  >
+  <ion-col size="5" class="form-button" >
+    <ion-button (click)="handleClick()">Double Click Button</ion-button>
+  </ion-col>
+  <ion-col size="5" class="form-button" (click)="binddata('Right')">
+    <ion-button >Right Click Button</ion-button>
+  </ion-col>
+  <ion-col size="5"  class="form-button" (click)="binddata('Dynamic')">
+    <ion-button >Dynamic Click Button</ion-button>  
+  </ion-col>
+  <ion-col size="5"  class="form-button" (click)="binddata('Tap')">
+    <ion-button >Tap Click Button</ion-button>  
+  </ion-col>
+  <ion-col size="5" class="form-button" >
+    <ion-button (mousedown)="endLongPress()" (mouseup)="startLongPress()" (mouseleave)="endLongPress()">Long Press</ion-button>
+  </ion-col>
+  <ion-col size="12" style="display: flex;justify-content:flex-start !important;margin-top: 20px;
+  font-size: 18px;
+  color: green;">
+    <span style="font-family:Helvetica !important">{{selectedbutton}}</span>
+  </ion-col>
+  <ion-col size="12">
+    <ion-item-sliding>
+      <ion-item-options side="start">
+        <ion-item-option color="success">Swiped Left</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item>
+        <ion-label>Swipe Left</ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-col>
+  <ion-col size="12">
+    <ion-item-sliding>
+      <ion-item-options side="end">
+        <ion-item-option color="success">Swiped Right</ion-item-option>
+      </ion-item-options>
+  
+      <ion-item >
+        <ion-label>Swipe Right</ion-label>
+      </ion-item>
+    </ion-item-sliding>
+  </ion-col>
+  <ion-col size="12">
+    <ion-list lines="none">Swipe Up/Dowm</ion-list>
+    <ion-list>
+      <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+      <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+      <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))">
+        <ion-reorder>
+          <ion-item lines="none">
+            <ion-label> Item 1 </ion-label>
+          </ion-item>
+        </ion-reorder>
+    
+        <ion-reorder>
+          <ion-item lines="none">
+            <ion-label> Item 2 </ion-label>
+          </ion-item>
+        </ion-reorder>
+    
+        <ion-reorder>
+          <ion-item lines="none">
+            <ion-label> Item 3 </ion-label>
+          </ion-item>
+        </ion-reorder>
+    
+        <ion-reorder>
+          <ion-item lines="none">
+            <ion-label> Item 4 </ion-label>
+          </ion-item>
+        </ion-reorder>
+    
+        <ion-reorder>
+          <ion-item lines="none">
+            <ion-label> Item 5 </ion-label>
+          </ion-item>
+        </ion-reorder>
+      </ion-reorder-group>
+    </ion-list>
+  </ion-col>
+</ion-row> 
+</ion-row>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='links'  && !isdisplay">
+<ion-list class="form-container" lines="none" >
+  <label style="display: flex;justify-content: center;font-size: 25px;
+  font-weight: 500;
+  color: #000000;">Links</label>     
+ <ion-item style="margin-top:2px !important">
+ <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+</ion-item>
+</ion-list>
+<ion-list lines="none">
+  <ion-item lines="none">
+    <h5><strong>Following links will open new tab</strong></h5>
+  </ion-item>
+  <ion-item lines="none"><a id="simpleLink" style="color: blue;text-decoration: none;" href="login"  rel="noopener">Home</a></ion-item>
+    <ion-item lines="none"><a id="dynamicLink" style="color: blue;text-decoration: none;" href="login"  rel="noopener">Home9IMBf</a></ion-item>
+      <ion-item lines="none"><h5><strong>
+Following links will send an api call</strong><b></b></h5></ion-item>
+</ion-list>
+<ion-list lines="none">
+<ion-item lines="none" class="link-container" (click)="getStatusCodeResponse('201')" id="created" name="created-name" >Created (201)</ion-item>
+<ion-item lines="none" class="link-container" (click)="getStatusCodeResponse('204')" id="nocontent" name="nocontent-name" >No Content (204)</ion-item>
+<ion-item lines="none" class="link-container" (click)="getStatusCodeResponse('301')" id="moved" name="moved-name" >Moved (301)</ion-item>
+<ion-item lines="none" class="link-container" (click)="getStatusCodeResponse('400')"id="badrequest" name="badrequest-name" >Bad Request (400)</ion-item>
+<ion-item lines="none"  class="link-container" (click)="getStatusCodeResponse('401')" id="unauthorized" name="unauthorized-name" >Unauthorized (401)</ion-item>
+<ion-item lines="none" class="link-container" (click)="getStatusCodeResponse('403')" id="forbidden" name="forbidden-name" >Forbidden (403)</ion-item>
+<ion-item lines="none"  class="link-container" (click)="getStatusCodeResponse('404')" id="notfound" name="notfound-name" >Not Found (404)</ion-item>
+</ion-list>
+<ion-list lines="none" class="response" >
+<span>{{statuscode}}</span>
+</ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Broken'  && !isdisplay">
+  <ion-list lines="none">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;">Broken Links - Images</label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+  </ion-list>
+  <ion-list lines="none" class="images">
+    <ion-item lines="none">
+      <span>Valid Image</span>
+    </ion-item> 
+    <ion-item lines="none">
+      <img src="assets/images.jpg" alt="">
+    </ion-item>  
+  <ion-item lines="none">
+    Broken Image
+  </ion-item>
+  <ion-item lines="none">
+    <img src="#" />
+  </ion-item>
+  <ion-item lines="none"><span> valid link  <a id="vldlink" [routerLink]="['/login']">Click Here for Valid Link</a></span>
+   </ion-item>
+  <ion-item lines="none"><span>broken link  <a id="brlink" href="http://the-internet.herokuapp.com/status_codes/500">Click Here for Broken Link</a></span>
+   </ion-item>
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Upload'  && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;">Upload and Download</label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-item lines="none">
+      <h4>File Upload</h4>
+    </ion-item>
+    <ion-item>
+      <input type="file" id="fileUpload" />   
+     </ion-item>      
+      <p id="fileName"></p>    
+      <br><br>    
+      <ion-item><h4>Download Image</h4></ion-item>
+      <ion-item><ion-button (click)="downloadImage('/assets/images.jpg')" style="--background: #007cba;
+        --padding-top: 27px;
+        --padding-bottom: 27px;
+        --padding-start: 20px;
+        --padding-end: 20px;
+        font-size: 15px;">Download Image</ion-button></ion-item>
+  </ion-list>
+</ion-grid>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Dynamic'  && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;">Dynamic Properties</label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-item lines="none">
+      <h3 style="text-align: left;">Button 1: Enable after 5 seconds</h3>
+    </ion-item>
+      <ion-item lines="none">
+    <ion-button    class="button-style" [disabled]="isDisabled" (click)="changebutton()" style="--background: #006ba1 !important">Button 1</ion-button>
+    </ion-item> 
+    <ion-item lines="none"><h3 style="text-align: left;">Button 2: Change color after 5 seconds</h3></ion-item>
+    <ion-item lines="none">
+  <ion-button  [color]="buttonColor"  class="button-style" (click)="changebutton3()"  style="--ion-color-contrast: white !important;">Button 2</ion-button>
+  </ion-item>  
+  <ion-item lines="none"><h3 style="text-align: left;">Button 3: Display after 5 seconds</h3></ion-item>
+    <ion-item lines="none" *ngIf="showButton">
+  <ion-button    class="button-style"  (click)="changebutton3()"  >Button 3</ion-button>
+  </ion-item>  
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem== 'Practice' && !isdisplay">
+  <ion-card class="container">
+    <form id="studentForm" (submit)="onSubmit($event)">
+      <div class="side-by-side">
+        <div class="form-group" id="firstNameGroup">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" required>
+          <span class="green-tick"><i class="fa fa-check-circle"></i></span>
+        </div>
+        <div class="form-group" id="lastNameGroup">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" required>
+          <span class="green-tick"><i class="fa fa-check-circle"></i></span>
+        </div>
+      </div>
+      <div class="form-group" id="emailGroup">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+        <span class="green-tick"><i class="fa fa-check-circle"></i></span>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <div class="radio-buttons">
+          <label><input type="radio" name="gender" value="Male" required> Male</label>
+          <label><input type="radio" name="gender" value="Female"> Female</label>
+          <label><input type="radio" name="gender" value="Other"> Other</label>
+         
+        </div>
+      </div>
+      <div class="form-group" id="mobileGroup">
+        <label for="mobile">Mobile (10 Digits)</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" required>
+        <span class="green-tick"><i class="fa fa-check-circle"></i></span>
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="subjects">Subjects</label>
+        <input type="text" id="subjects" name="subjects" required>
+      </div>
+      <div class="form-group" >
+        <label>Hobbies</label>
+        <div class="checkboxes">
+          <label><input type="checkbox" name="hobbies" value="Sports"> Sports</label>
+          <label><input type="checkbox" name="hobbies" value="Reading"> Reading</label>
+          <label><input type="checkbox" name="hobbies" value="Music"> Music</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="picture">Picture</label>
+        <input type="file" id="picture" name="picture" accept="image/*" required>
+      </div>
+      <div class="form-group">
+        <label for="currentAddress">Current Address</label>
+        <textarea id="currentAddress" name="currentAddress" rows="3" required></textarea>
+      </div>
+      <div class="side-by-side">
+        <div class="form-group">
+          <label for="state">State</label>
+          <select id="state" name="state-name" placeholder="Select State" required interface="popover" (change)="selectedstate($event)">
+            <option [value]="data.state" *ngFor="let data of states" accessibilityId="statename">{{data.state}}</option>
+          
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="city">City</label>
+          <select id="city" name="city-name" placeholder="Select City" required interface="popover">
+            <option [value]="city.city" *ngFor="let city of selectedcity" id="cityname">{{city.city}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="btn-container">
+        <button type="submit" id="formsubmit">Submit</button>
+      </div>
+    </form>
+  </ion-card> 
+</ion-grid>
+<ion-grid *ngIf="isshowdata && !isdisplay">
+  <ion-row>
+    <ion-row class="feilddata">
+      <ion-col size="6">Feild</ion-col>
+      <ion-col size="6">Value</ion-col>
+    </ion-row>
+  </ion-row>
+  <ion-row *ngFor = "let data of allData" class="feilddata" >
+    <ion-col size="6">First Name</ion-col>
+    <ion-col size="6">{{data.firstName}}</ion-col>
+    <ion-col size="6">Last Name</ion-col>
+    <ion-col size="6">{{data.lastName}}</ion-col>
+    <ion-col size="6">Email</ion-col>
+    <ion-col size="6">{{data.email}}</ion-col>
+    <ion-col size="6">DOB</ion-col>
+    <ion-col size="6">{{data.dob}}</ion-col>
+    <ion-col size="6">Image</ion-col>
+    <ion-col size="6">{{data.picture}}</ion-col>
+    <ion-col size="6">Hobbies</ion-col>
+    <ion-col size="6">{{data.hobbies}}</ion-col>
+    <ion-col size="6">Gender</ion-col>
+    <ion-col size="6">{{data.gender}}</ion-col>
+    <ion-col size="6">Current Address</ion-col>
+    <ion-col size="6">{{data.currentAddress}}</ion-col>
+    <ion-col size="6">State</ion-col>
+    <ion-col size="6">{{data.state}}</ion-col>
+    <ion-col size="6">city</ion-col>
+    <ion-col size="6">{{data.city}}</ion-col>
+  </ion-row>
+<button class="close-btn" (click)="closePopup()">Close</button>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Browser' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;">Browser Windows</label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list lines="none" style="display: flex;">
+    <ion-item lines="none" class="newtab">
+    <ion-button id="openNewTab" (click)="openMessageWindow('t')">Open New Tab</ion-button>
+  </ion-item>
+  <ion-item lines="none" class="newtab" style="margin-left: -24px;">
+    <ion-button id="openNewWindow" (click)="openMessageWindow('w')">Open New Window</ion-button>
+  </ion-item>
+</ion-list>
+<ion-list lines="none" style="padding: 0px  !important;">
+  <ion-item lines="none" class="newtab">
+    <ion-button id="openMessageWindowButton" (click)="openMessageWindow('m')">Open New Window with Message</ion-button>
+  </ion-item>
+</ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Alerts' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;">Alerts</label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-row class="prompt">
+    <ion-col size="12" size-sm="12" size-md="3">
+      <ion-list lines="none">
+        <ion-item lines="none">
+<ion-button (click)="alert('alert')">Click to see Alert</ion-button>
+</ion-item>
+</ion-list>
+    </ion-col>    
+    <ion-col size="12" size-sm="12" size-md="3">
+      <ion-list lines="none">
+        <ion-item lines="none">
+            <ion-button (click)="alert('fsec')">Click to see Alert afetr 5 sec</ion-button>
+          </ion-item>
+        </ion-list>
+    </ion-col>
+    <ion-col size="12" size-sm="12" size-md="3">
+      <ion-list lines="none">
+        <ion-item line="none">
+      <ion-button (click)="alert('crm')">Click to see cofirm Box</ion-button>
+    </ion-item>
+    <ion-item lines="none"v style="color:green">
+      {{confirmResult}}
+    </ion-item>
+  </ion-list>
+  </ion-col>    
+    <ion-col size="12" size-sm="12" size-md="3" lines="none">
+      <ion-list lines="none" >
+        <ion-item lines="none">
+        <ion-button (click)="alert('prm')"> Click to see Prompt Box</ion-button>
+      </ion-item>
+      <ion-item lines="none" style="color:green">
+        {{promptResult}}
+      </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Frames' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;">Frames</label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list>
+    <ion-item lines="none">
+    <p>There are 2 iframes embedded in this page. You can switch between the parent frame (this window) and the two frames below using your browser's inspector tools.</p>
+  </ion-item>
+  <ion-item lines="none">
+
+    <iframe
+    src="https://nrktechnologies.com/data"
+    id="iframe1"
+    frameborder="0"
+    width="100%"
+    height="300px"
+  ></iframe>
+</ion-item>
+<ion-item lines="none">  
+    <iframe src="https://nrktechnologies.com/data" id="iframe2"></iframe>
+  </ion-item>
+  <ion-item>
+    <p>Use your browser's developer tools to inspect these frames and their contents.</p>
+  </ion-item>
+  </ion-list>
+  </ion-grid>
+  <ion-grid *ngIf="activeItem=='Nested' && !isdisplay">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;"> Nested Frames </label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+    <ion-list>
+      <ion-item class="iframe-container" lines="none">
+        <!-- Parent Iframe -->
+        <iframe class="parent-frame" srcdoc="
+            <html>
+                <body>
+                    <h2>Parent Frame</h2>
+                    <p>This is the content inside the parent frame.</p>
+
+                    <!-- Nested Child Iframe -->
+                    <iframe class='child-frame' srcdoc='
+                        <html>
+                            <body>
+                                <h3>Child Iframe</h3>
+                                <p>This is the content inside the child frame.</p>
+                            </body>
+                        </html>'></iframe>
+                </body>
+            </html>
+        "></iframe>
+    </ion-item>
+    </ion-list>
+  </ion-grid>
+  <ion-grid *ngIf="activeItem=='Modal' && !isdisplay">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;">Modal Dialogs</label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+    <ion-list class="ion-padding" style="display: flex;padding-left:0px" >
+      <ion-item line="none" lines="none">
+        <ion-button id="open-modal" expand="block" style="--background:#0d6efd !important">Small Modal</ion-button>
+      </ion-item>
+      <ion-item line="none" lines="none" style="margin-left:-25px !important">
+        <ion-button id="open-model" expand="block" style="--background:#6c757d !important">Large Modal</ion-button>
+      </ion-item>
+      
+        <ion-modal #modal trigger="open-modal" class="model">
+          <ng-template>
+            <ion-content>
+              <ion-toolbar>
+                <ion-title> Small Modal</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button color="black" (click)="modal.dismiss()">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+              <ion-list>
+                <ion-item>                  
+                  <ion-label>
+                    <h2>This is small model</h2>
+                  </ion-label>
+                </ion-item>               
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+        <ion-modal #model trigger="open-model"  >
+          <ng-template>
+              <ion-toolbar>
+                <ion-title> Large Modal</ion-title>
+                <ion-buttons slot="end">
+                  <ion-button (click)="model.dismiss()">Close</ion-button>
+                </ion-buttons>
+              </ion-toolbar>
+            <ion-content>
+              <ion-list>
+                <ion-item>                 
+                  <ion-label>
+                    <h2>This is a large modal.</h2>
+                  </ion-label>
+                </ion-item>               
+              </ion-list>
+            </ion-content>
+          </ng-template>
+        </ion-modal>
+    </ion-list>    
+  </ion-grid>
+  <ion-list class="form-container" lines="none" *ngIf="activeItem=='Accordian' && !isdisplay">
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Accordian  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-grid class="gridaccordian" *ngIf="activeItem=='Accordian' && !isdisplay">
+   
+    <ion-list  lines="none" style="width: 100%;" class="accordian">
+      <div (click)="isclicked('1')"  >
+        <ion-item lines="none"  [ngClass]="{'active': isclick === '1'}" class="firstitem">
+          <span >Accordion Item #1</span>
+          <span class="iconstyle" style="width: 71% !important;"><ion-icon  [name]="isclick === '1' ? 'chevron-down-outline' : 'chevron-up-outline'"></ion-icon></span>
+        </ion-item>
+        <ion-item *ngIf="isclick=='1'"  lines="none">
+        <p >
+          This is the first item's accordion body. You can put any content here, like text, images, or other HTML elements.
+
+        </p>  
+      </ion-item>
+      </div>
+      <div (click)="isclicked('2')">
+        <ion-item lines="none" [ngClass]="{'active': isclick === '2'}" >
+          <span >Accordion Item #2</span>
+          <span class="iconstyle" style="width: 71% !important;"><ion-icon  [name]="isclick === '2' ? 'chevron-down-outline' : 'chevron-up-outline'"></ion-icon></span>
+        </ion-item>
+        <ion-item *ngIf="isclick=='2'" lines="none">
+        <p >
+          This is the second item's accordion body. You can add any content here as well, including images or custom components.
+        </p>  
+      </ion-item>
+      </div>
+      <div (click)="isclicked('3')">
+        <ion-item lines="none" [ngClass]="{'active': isclick === '3'}" >
+          <span >Accordion Item #3</span>
+          <span class="iconstyle" style="width: 71% !important;"><ion-icon  [name]="isclick === '3' ? 'chevron-down-outline' : 'chevron-up-outline'"></ion-icon></span>
+        </ion-item>
+        <ion-item *ngIf="isclick=='3'" lines="none">
+        <p >
+          This is the third item's accordion body. The content inside can be anything you want. It will collapse and expand when clicked.
+        </p>  
+      </ion-item>
+      </div>
+   
+    </ion-list>
+  </ion-grid>
+  <ion-grid *ngIf="activeItem=='Auto' && !isdisplay">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;"> Auto Complete  </label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col size="12" size-md="6">
+        <div class="multi-select-container">
+
+        <h2 style="text-align: left;">Single Select Color</h2>
+        <div class="tag-container" (click)="toggleDropdown('single')" [class.active]="isSingleDropdownOpen">
+          <div *ngIf="selectedSingleColor" class="tag" [style.background-color]="selectedSingleColor">
+            {{ selectedSingleColor }}
+            <ion-icon name="close-circle" (click)="removeSingleSelectTag($event)"></ion-icon>
+          </div>
+          <input
+            type="text"
+            class="tag-input"
+            [(ngModel)]="singleInputValue"
+            (keyup)="filterColors('single')"
+            placeholder="Select a color"
+          />
+        </div>
+        <div class="dropdown" *ngIf="isSingleDropdownOpen">
+          <div *ngFor="let color of filteredSingleColors" (click)="selectSingleColor(color)">
+            {{ color }}
+          </div>
+        </div>
+        </div>
+      </ion-col>
+      <ion-col size="12" size-md="6">
+        <div class="multi-select-container">
+        <h2 style="text-align: left;">Multi Select Color</h2>
+        <div class="tag-container" (click)="toggleDropdown('multi')" [class.active]="isMultiDropdownOpen">
+          <div *ngFor="let color of selectedMultiColors" class="tag" [style.background-color]="color">
+            {{ color }}
+            <ion-icon name="close-circle" (click)="removeMultiSelectTag($event, color)"></ion-icon>
+          </div>
+          <input
+            type="text"
+            class="tag-input"
+            [(ngModel)]="multiInputValue"
+            (input)="filterColors('multi')"
+            placeholder="Type a color"
+          />
+        </div>
+        <div class="dropdown" *ngIf="isMultiDropdownOpen">
+          <div *ngFor="let color of filteredMultiColors" (click)="selectMultiColor(color)">
+            {{ color }}
+          </div>
+        </div>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="activeItem=='Slider' && !isdisplay">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;"> Slider  </label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+    <ion-list  lines="none">
+      <ion-item style="margin-left: 19px;">
+        <label>Select Value</label>
+      </ion-item>
+      <ion-item lines="none" id="slider" data-test-id="item1" title="slider">
+        <ion-range 
+        min="0" 
+        max="100" 
+        step="1" 
+        [(ngModel)]="rangevalue"></ion-range>
+      </ion-item>
+      <ion-item >
+        <label style="display: flex;justify-content: center;margin-left:auto;margin-right: auto;"> {{rangevalue}}%
+        </label>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+  <ion-grid *ngIf="activeItem=='Progress' && !isdisplay">
+    <ion-list class="form-container" lines="none" >
+      <label style="display: flex;justify-content: center;font-size: 25px;
+      font-weight: 500;
+      color: #000000;"> Progress Bar  </label>     
+     <ion-item style="margin-top:2px !important">
+     <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+    </ion-item>
+    </ion-list>
+    <ion-list  lines="none">     
+      <ion-item lines="none">
+        <ion-range id="rangeprogress"
+        class="vertical-range"
+        
+        min="0" 
+        max="100" 
+        step="1" 
+        [(ngModel)]="progress"></ion-range>
+      </ion-item>
+      <ion-item >
+        <label style="display: flex;justify-content: center;margin-left:auto;margin-right: auto;">Percentage: {{progress}}%
+        </label>
+      </ion-item>
+      <ion-item >
+        <ion-button (click)="startFilling()" *ngIf="!isRunning" style="display: flex;justify-content: center;margin-left:auto;margin-right: auto;" class="progressbutton">Start</ion-button>
+        <ion-button expand="full" color="danger" (click)="resetRange()" *ngIf="isRunning" style="display: flex;justify-content: center;margin-left:auto;margin-right: auto;" class="progressbutton">Stop</ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-grid>
+<ion-grid *ngIf="activeItem=='Tool' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Tool Tips  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list lines="none">
+    <ion-item lines="none">
+      <ion-button id="click-trigger" class="progressbutton">Click Me</ion-button>
+  <ion-popover trigger="click-trigger" triggerAction="click">
+  <ng-template>
+    <ion-content class="ion-padding">Tooltip for button</ion-content>
+  </ng-template>
+</ion-popover>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-input id="click-triggers">Enter Name</ion-input>
+<ion-popover trigger="click-triggers" triggerAction="click">
+  <ng-template>
+    <ion-content class="ion-padding">Please Enter Your Name</ion-content>
+  </ng-template>
+</ion-popover>
+    </ion-item>
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Menu' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Menu  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-list>
+  <nav class="navbar" >
+    <ul>
+      <li id="nrkhomenn-main1"><a (click)="scrollToTop()" >Main Item 1</a></li>
+  
+      <li id="nrkhomenn-main2"  (click)="toggleSubMenu('main2')" >
+        <a >Main Item 2</a>
+        <ul class="submenu" *ngIf="isSubMenuVisible('main2')">
+          <li id="nrkhomenn-sub1"><a >Sub Item</a></li>
+          <li id="nrkhomenn-sub2"><a >Sub Item</a></li>
+          
+          <!-- Sub-sub menu -->
+          <li id="nrkhomenn-sub3" class="submenu-sub" (click)="toggleSubSubMenu('sub3')" >
+            <a >SUB SUB LIST</a>
+            <ul class="submenu-submenu" *ngIf="isSubSubMenuVisible('sub3')">
+              <li id="nrkhomenn-subsub1"><a >Sub Sub Item 1</a></li>
+              <li id="nrkhomenn-subsub2"><a >Sub Sub Item 2</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+  
+      <li id="nrkhomenn-main3"><a (click)="scrollToTop()" >Main Item 3</a></li>
+    </ul>
+  </nav>
+</ion-list>    
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Date' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Date Picker  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list>
+  <ion-card >
+  <ion-list lines="none" class="data">
+    <ion-item lines="none">
+      <label>Select Date</label>
+    </ion-item>
+    <ion-item lines="none" class="dateandtime">
+      <ion-datetime-button datetime="date"></ion-datetime-button>
+      <ion-modal [keepContentsMounted]="true">
+        <ng-template>
+            <ion-datetime id="date" presentation="date" [(ngModel)]="date"> </ion-datetime>
+        </ng-template>
+      </ion-modal>        
+    </ion-item>
+    <ion-item lines="none">
+    <label >Select Date and Time</label>
+    </ion-item>
+     <ion-item lines="none"  class="dateandtime">
+      <ion-datetime-button datetime="datetime"></ion-datetime-button>
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="datetime" [(ngModel)]="dateandtime"></ion-datetime>
+  </ng-template>
+</ion-modal>
+     </ion-item>
+        <ion-item lines="none" >
+          <ion-button (click)="datesubmit()">Submit</ion-button>
+        </ion-item>
+        <ion-list *ngIf="isdate">
+        <ion-item >
+          <label>Selected Date:</label>&nbsp;<span>{{date}}</span>
+        </ion-item>
+        <ion-item>
+          <label>Selected Date And Time:</label>&nbsp;<span>{{dateandtime}}</span>
+        </ion-item>
+      </ion-list>
+  </ion-list>
+</ion-card>  
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Tabs' && !isdisplay">  
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Tabs  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-list lines="none" style="display: flex;" class="tabs" >
+    <ion-item lines="none"  [ngClass]="{ 'active-tab': isTab=='1' }"  name="tab1-name" >
+      <span (click)="Tab('1')" id="tab1">Tab 1</span>
+    </ion-item>
+    <ion-item lines="none" (click)="Tab('2')" [ngClass]="{ 'active-tab': isTab=='2' }" id="tab2" name="tab2-name" >
+      <span>Tab 2</span>
+    </ion-item>
+    <ion-item lines="none" [disabled]="istab3" (click)="Tab('3')" id="tab4" name="tab4-name" >
+      <span>Tab 3 (Disabled)</span>
+    </ion-item>
+  </ion-list>
+  <ion-list lines="none" style="display: flex;" class="tab2">
+    <ion-item lines="none" *ngIf="isTab=='1'">
+      <div>
+      <h4>Content for Tab 1</h4>
+      <p>This is the content of Tab 1, which is expanded by default.</p>
+    </div>
+    </ion-item>
+    <ion-item lines="none" *ngIf="isTab=='2'">
+      <div>
+      <h4>Content for Tab 2</h4>
+      <p>This is the content of Tab 2, which is expanded by default.</p>
+      </div>
+    </ion-item>
+    <ion-item lines="none" *ngIf="isTab=='3'">
+    <div>
+      <h4>Content for Tab 3</h4>
+      <p>This is the content of Tab 3, which is expanded by default.</p>
+    </div>
+    </ion-item>
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Select' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Select Menu  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-list class="selctoption">
+    <ion-item lines="none">
+      <div>
+        <h5 >Select Value
+        </h5>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Group 1, Option1">
+        <ion-select-option  style="color:blue !important;font-size:20px !important">Group 1</ion-select-option>
+        <ion-select-option value="Group 1 Option1">Group 1, Option1</ion-select-option>
+        <ion-select-option value="Group 1 Option2">Group 1, Option2</ion-select-option>
+        <ion-select-option style="color:blue;font-size:20px">Group 2</ion-select-option>  
+        <ion-select-option value="Group 2 Option1">Group 2, Option1</ion-select-option>
+        <ion-select-option value="Group 2 Option2">Group 2, Option2</ion-select-option>
+        <ion-select-option value=" root Option">A root Option</ion-select-option>
+        <ion-select-option value="Another root option">Another root option</ion-select-option>    
+      </ion-select>
+      </div>
+    </ion-item>
+    <ion-item lines="none">
+      <div>
+        <h5 >Select one
+        </h5>
+      <ion-select aria-label="Fruit" interface="popover" placeholder="Dr">
+        <ion-select-option  value="Dr">Dr</ion-select-option>
+        <ion-select-option value="Mr">Mr</ion-select-option>
+        <ion-select-option value="Mrs">Mrs</ion-select-option>
+        <ion-select-option value="prof">Prof</ion-select-option>  
+        <ion-select-option value="Other">Other</ion-select-option>         
+      </ion-select>
+      </div>
+    </ion-item>
+  <ion-item lines="none">
+    <div >
+      <h5 > Multi select dropdown
+      </h5>
+    <ion-select id="smsnrk" multiple="true" interface="popover" placeholder="Select options">
+      <ion-select-option value="apple">Green</ion-select-option>
+      <ion-select-option value="banana">Blue</ion-select-option>
+      <ion-select-option value="orange">Black</ion-select-option>
+      <ion-select-option value="mango">Red</ion-select-option>      
+    </ion-select>
+    </div>
+    </ion-item>
+    <ion-item lines="none">
+      <div>
+    <h5 >Standard multi select
+    </h5>
+        <ion-select id="smsnrk" multiple ="true" placeholder="Select Multiple">
+            <ion-select-option value="apple">Apple</ion-select-option>
+            <ion-select-option value="banana">Banana</ion-select-option>
+            <ion-select-option value="orange">Orange</ion-select-option>
+            <ion-select-option value="mango">Mango</ion-select-option>
+            <ion-select-option value="grape">Grape</ion-select-option>
+            <ion-select-option value="pear">Pear</ion-select-option>
+            <ion-select-option value="watermelon">Watermelon</ion-select-option>
+            <ion-select-option value="kiwi">Kiwi</ion-select-option>
+            <ion-select-option value="peach">Peach</ion-select-option>
+            <ion-select-option value="plum">Plum</ion-select-option>
+        </ion-select>
+      </div>
+      </ion-item>
+</ion-list>  
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Sortable' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Sortable  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-list style="display: flex;" class="sort">
+    <ion-item  (click)="Tab('sort')" lines="none" [ngClass]="{ 'active-tab': isTab=='sort' }">
+      Sortable List
+    </ion-item>
+    <ion-item  lines="none" (click)="Tab('grid')" [ngClass]="{ 'active-tab': isTab=='grid' }">
+      Grid
+    </ion-item>
+  </ion-list>
+  <ion-grid class="sortable" *ngIf="isTab=='sort' && !isdisplay">
+     
+    <ion-list>
+        <!-- The reorder gesture is disabled by default, enable it to drag and drop items -->
+        <!-- Casting $event to $any is a temporary fix for this bug https://github.com/ionic-team/ionic-framework/issues/24245 -->
+        <ion-reorder-group [disabled]="false" (ionItemReorder)="handleReorder($any($event))" class="reorder">
+          <ion-reorder>
+            <ion-item lines="none">
+              <ion-label>  1 </ion-label>
+            </ion-item>
+          </ion-reorder>
+      
+          <ion-reorder>
+            <ion-item lines="none">
+              <ion-label>  2 </ion-label>
+            </ion-item>
+          </ion-reorder>
+      
+          <ion-reorder>
+            <ion-item lines="none">
+              <ion-label>  3 </ion-label>
+            </ion-item>
+          </ion-reorder>
+      
+          <ion-reorder>
+            <ion-item lines="none">
+              <ion-label> 4 </ion-label>
+            </ion-item>
+          </ion-reorder>
+      
+          <ion-reorder>
+            <ion-item lines="none">
+              <ion-label>  5 </ion-label>
+            </ion-item>
+          </ion-reorder>
+        </ion-reorder-group>
+      </ion-list>
+   
+  </ion-grid>
+  <ion-grid class="sortable" *ngIf="isTab === 'grid' && !isdisplay">
+    <ion-list>
+    <ion-reorder-group 
+    disabled="false" 
+    (ionItemReorder)="doReorder($event)">
+    <ion-row>
+      <ion-col size="3" *ngFor="let item of items;let i=index" (click)="swapItems(i)">
+        {{ item }}
+        <ion-reorder slot="end"></ion-reorder>
+      </ion-col>
+    </ion-row>
+  </ion-reorder-group>
+</ion-list>
+  </ion-grid>
+
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Selectable' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Selectable  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-list style="display: flex;" class="sort">
+    <ion-item  (click)="Tab('list')" lines="none" [ngClass]="{ 'active-tab': isTab=='list' }">
+      Sortable List
+    </ion-item>
+    <ion-item  lines="none" (click)="Tab('gri')" [ngClass]="{ 'active-tab': isTab=='gri' }">
+      Grid
+    </ion-item>
+  </ion-list>
+  <ion-grid class="sortable" *ngIf="isTab=='list'">
+    <ion-row id="sortableList">
+      <ion-col size="12" (click)="slect('1')" [ngClass]="{ 'active-select': isselect1}">1</ion-col>
+      <ion-col size="12" (click)="slect('2')" [ngClass]="{ 'active-select': isselect2 }">2</ion-col>
+      <ion-col size="12" (click)="slect('3')" [ngClass]="{ 'active-select': isselect3 }">3</ion-col>
+      <ion-col size="12" (click)="slect('4')" [ngClass]="{ 'active-select': isselect4 }">4</ion-col>
+      <ion-col size="12" (click)="slect('5')" [ngClass]="{ 'active-select': isselect5 }">5</ion-col>
+      
+    </ion-row>
+  </ion-grid>
+  <ion-grid class="sortable" *ngIf="isTab=='gri'">
+    <ion-row style="display: flex ;justify-content: center;">
+      <ion-col size="3" (click)="slect('11')" [ngClass]="{ 'active-select': isselect11 }">1</ion-col>
+      <ion-col size="3" (click)="slect('12')" [ngClass]="{ 'active-select': isselect12 }">2</ion-col>
+      <ion-col size="3"  (click)="slect('13') " [ngClass]="{ 'active-select': isselect13 }">3</ion-col>
+      <ion-col size="3" (click)="slect('14')" [ngClass]="{ 'active-select': isselect14 }">4</ion-col>
+      <ion-col size="3" (click)="slect('15')" [ngClass]="{ 'active-select': isselect15 }">5</ion-col>
+      <ion-col size="3" (click)="slect('6')" [ngClass]="{ 'active-select': isselect6 }">6</ion-col>
+      <ion-col size="3" (click)="slect('7')" [ngClass]="{ 'active-select': isselect7 }">7</ion-col>
+      <ion-col size="3" (click)="slect('8')" [ngClass]="{ 'active-select': isselect8 }">8</ion-col>
+      <ion-col size="3" (click)="slect('9')" [ngClass]="{ 'active-select': isselect9 }">9</ion-col>
+      <ion-col size="3" (click)="slect('101')" [ngClass]="{ 'active-select': isselect101 }">10</ion-col>
+      <ion-col size="3" (click)="slect('111')" [ngClass]="{ 'active-select': isselect111 }">11</ion-col>
+      <ion-col size="3" (click)="slect('121')" [ngClass]="{ 'active-select': isselect121 }">12</ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Droppable' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Droppable  </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-row class="Droppable">
+    <ion-col [ngClass]="{ 'activedrop': isdrop }">
+      <ion-item lines="none" (click)="simple()" >Simple</ion-item>
+    </ion-col>
+    <ion-col [ngClass]="{ 'activedrop': isdropable=='accept' }">
+      <ion-item lines="none" (click)="drop('accept')" >Accept</ion-item>
+    </ion-col>
+    <ion-col [ngClass]="{ 'activedrop': isdropable=='prevent' }">
+      <ion-item lines="none" (click)="drop('prevent')" >Prevent Propagation</ion-item>
+    </ion-col>
+    <ion-col [ngClass]="{ 'activedrop': isdropable=='Revert' }">
+      <ion-item lines="none" (click)="drop('Revert')" >Revert Draggable</ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-list class="dragme" *ngIf= 'isdrop' >
+    <ion-item lines="none">
+      <ion-button>Drag Me</ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <span>Drop Here</span>
+    </ion-item>
+  </ion-list>
+  <ion-list class="dragme" *ngIf="isdropable=='accept'" >
+    <ion-item lines="none">
+      <ion-button>Acceptable</ion-button>
+    </ion-item>
+    <ion-item lines="none" style="margin-top: 26px;">
+      <ion-button>Not Acceptable</ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <span>Drop Here</span>
+    </ion-item>
+  </ion-list>
+  <ion-list class="dragme" *ngIf="isdropable=='prevent' && !isdisplay" >
+    <ion-item lines="none">
+      <ion-button>Drag Me</ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <span>Outer Droppable</span>      
+    </ion-item>
+    <ion-item lines="none">
+      <span style="padding-top: 0px; padding-bottom: 137px;">Outer Droppable</span>      
+    </ion-item>
+    <ion-item lines="none" style="position: absolute; top: 239px;left: 30px;">
+      <span>Inner Droppable(not<p>inner Droppable(greedy) </span>
+    </ion-item>
+    <p style="display: flex;
+        justify-content: center; margin-top: 52px;">greedy)</p>
+  </ion-list>
+  <ion-list class="dragme" *ngIf="isdropable=='Revert'" >
+    <ion-item lines="none">
+      <ion-button>Will Revert</ion-button>
+    </ion-item>
+    <ion-item lines="none" style="margin-top: 26px;">
+      <ion-button>Not Revert</ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <span>Drop Here</span>
+    </ion-item>   
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Dragabble' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Drogabble </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-row class="Droppable">
+    <ion-col  size="12" size-md="4">
+      <ion-item lines="none" (click)="simple()" [ngClass]="{ 'activedrop': isdrop }">Simple</ion-item>
+    </ion-col>
+    <ion-col  size="12" size-md="4">
+      <ion-item lines="none" (click)="drop('axis')" [ngClass]="{ 'activedrop': isdropable=='axis' }">Axis Restricted</ion-item>
+    </ion-col>
+    <ion-col  size="12" size-md="4">
+      <ion-item lines="none" (click)="drop('restrict')" [ngClass]="{ 'activedrop': isdropable=='restrict' }">Container Restricted</ion-item>
+    </ion-col>
+    <ion-col  size="12" size-md="4">
+      <ion-item lines="none" (click)="drop('style')" [ngClass]="{ 'activedrop': isdropable=='style' }">Cursor Style</ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-list class="draggable" *ngIf= 'isdrop' >
+    <ion-item lines="none">
+      <ion-button>Drag Me</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-list class="draggable" *ngIf="isdropable=='axis'" >
+    <ion-item lines="none">
+      <ion-button>Only X</ion-button>
+    </ion-item>
+    <ion-item lines="none" style="margin-top: 26px;">
+      <ion-button>Only Y</ion-button>
+    </ion-item>    
+  </ion-list>
+  <ion-list  *ngIf="isdropable=='restrict' && !isdisplay" >
+    <ion-item lines="none" style="border: 1px dashed lightgray;
+    padding-bottom: 114px;">
+      <ion-button style="--background: rgb(23, 162, 184);
+      --padding-bottom: 17px;
+      text-align: left;
+      line-height: 0.05em;
+      --padding-end: 18px;">I'm contained within<br/> the box</ion-button>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-button style="--background: rgb(40, 167, 69);;
+      --padding-end: 20px;
+      text-align: left;
+      --padding-bottom: 20px;">I'mcontained within<br/> my parent</ion-button>
+    </ion-item>    
+  </ion-list>
+  <ion-list class="draggable" *ngIf="isdropable=='style'" >
+    <ion-item lines="none">
+      <ion-button>Will always stick to center</ion-button>
+    </ion-item>
+    <ion-item lines="none" >
+      <ion-button>My cursor at top left</ion-button>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-button>My cursor at top bottom</ion-button>
+    </ion-item>   
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Resizable' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Resizable  </label>     
+   <ion-item style="margin-top:2px !important" >
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-list style="padding-left: 23px;">
+    <h4>Normal Resizable Box (Unrestricted)</h4>
+      <ion-item class="normal-resizable" lines="none">
+          Resize me freely!
+      </ion-item>      
+      <h4>Resizable Box with Constraints</h4>
+      <div class="constrained-resizable" id="resizableBox" lines="none">
+          <div class="resize-handle" id="resizeHandle"></div>
+      </div>
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Login' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Login  </label>     
+   <ion-item style="margin-top:2px !important" >
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  <ion-card>
+    <ion-list class="credentials" id="Login">
+      <ion-item lines="none"><h3 style="font-weight: bold;
+    font-size: 25px !important;">Login</h3></ion-item>
+      <ion-item lines="none"><h6>username : demo</h6></ion-item>
+      <ion-item lines="none"><h6>password : demo</h6></ion-item>
+      <ion-item lines="none"><p>Welcome back! Please log in to continue. </p></ion-item>
+    </ion-list>
+    <ion-list class="login">
+      <ion-item lines="none"><label for="">User Name</label></ion-item>
+      <ion-item lines="none">
+        <ion-input   fill="outline" placeholder="Enter User Name" [(ngModel)]="busername"   #userInput></ion-input>
+      </ion-item>
+      <ion-item lines="none"><label for="">Password</label></ion-item>
+      <ion-item lines="none">
+        <ion-input   fill="outline" placeholder="Password" [(ngModel)]="bpassword"    #userPassword></ion-input>      </ion-item>
+
+      <ion-item lines="none">
+        <button  (click)="login()" id="userlogin"  name="field-blogin" >Login</button>
+      </ion-item>
+      <ion-item lines="none" style="margin-left: auto;margin-right: auto;font-size:14px" >
+        <p>Don't have an account? </p><span (click)="islogin()" id="bookregister">Register</span>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-grid>
+<ion-grid>
+  <ion-card *ngIf="isRegister && !isdisplay" id="Register">
+    <ion-list class="credentials">
+      <ion-item lines="none"><h3 style="font-weight: bold;
+    font-size: 25px !important;">Register</h3></ion-item>      
+      <ion-item lines="none"><p>Create New Account </p></ion-item>
+    </ion-list>
+    <ion-list class="login">
+      <ion-item lines="none"><label for="">User Name</label></ion-item>
+      <ion-item lines="none">
+        <ion-input   fill="outline" placeholder="User Name" [(ngModel)]="regname" id="bookusername"  #registerUser></ion-input>
+      </ion-item>
+      <ion-item lines="none"><label for="">Password</label></ion-item>
+      <ion-item lines="none">
+        <ion-input   fill="outline" placeholder="Password" [(ngModel)]="regpass" id="bookpassword"   #registerPassword></ion-input>
+      </ion-item>
+      <ion-item lines="none"><label for=""> Confirm Password</label></ion-item>
+      <ion-item lines="none">
+        <ion-input   fill="outline" placeholder=" confirm Password" [(ngModel)]="regconpass" id="bookconfirmpassword" #registerConfirmpassword></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <button  (click)="Register()" id="registerButton" >Register</button>
+      </ion-item>
+      <ion-item lines="none" style="margin-left: auto;margin-right: auto;font-size:14px">
+        <p>Already have an account? ? </p><span (click)="backtologin()" id="backtologin">Back To Login</span>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Profile' && !isdisplay"> 
+  <ion-list>
+    <ion-item lines="none">
+      <p>
+        Currently you are not logged into the Book Store application, please visit the <strong><a (click)="backtologin()">login</a></strong> page to enter or <strong><a (click)="islogin()">register</a></strong> page to register yourself.
+      </p>
+    </ion-item>    
+  </ion-list>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='Book' && !isdisplay">
+  <ion-list class="search" lines="none">
+    <ion-item>
+      <!-- <ion-searchbar  name="searchBook-name" title="searchBook-title" slot="start"  name=searchterms></ion-searchbar> -->
+      <input type="search" placeholder="search" id="searchterms"/>
+    </ion-item>
+    <ion-item style="margin-left:auto;" lines="none">
+      <ion-button (click)="backtologin()" id="storelogin">Login</ion-button>
+    </ion-item>
+  </ion-list>
+  <ion-row class="bookstore">     
+    <ion-col size="3" class="heading">
+      Image
+    </ion-col>
+    <ion-col size="3" class="heading">
+      Title     
+    </ion-col>
+    <ion-col size="3" class="heading">
+       Author      
+    </ion-col>
+    <ion-col size="3" class="heading">
+      Publisher    
+    </ion-col>
+    <ion-col size="3">
+        <img src="data" alt="Book Image" srcset="" id="bookimage">
+    </ion-col>
+    <ion-col size="3">
+        <a href="/books?book=9781449325862" id="gitpocket">Git Pocket Guide</a>        
+    </ion-col>
+    <ion-col size="3">
+      <label id="richard">Richard E. Silverman </label>   
+    </ion-col>
+    <ion-col size="3">
+      <label id="Media"> O'Reilly Media  </label>
+    </ion-col>
+    <ion-col size="3">
+        <img src="data" alt="Book Image" srcset="" id="storeimage">      
+    </ion-col>
+    <ion-col size="3">
+        <a href="/books?book=9781449325862" id="storegitpocket">Git Pocket Guide</a>      
+    </ion-col>
+    <ion-col size="3">
+      <label id="osmai"> Addy Osmani  </label>
+    </ion-col>
+    <ion-col size="3">
+      <label id="reily"> O'Reilly Media </label>
+    </ion-col>    
+  </ion-row>
+</ion-grid>
+<ion-grid *ngIf="activeItem=='webTables' && !isdisplay">
+  <ion-list class="form-container" lines="none" >
+    <label style="display: flex;justify-content: center;font-size: 25px;
+    font-weight: 500;
+    color: #000000;"> Web Tables </label>     
+   <ion-item style="margin-top:2px !important">
+   <hr style="width: 100% !important; border: none; border-bottom: 1px solid #00000038; margin-top: 10px;">
+  </ion-item>
+  </ion-list> 
+  
+  <ion-list style="display: flex;justify-content: space-between;">
+  <ion-item lines="none" style="margin-top:10px">   
+    <!-- <ion-searchbar show-clear-button="focus" value="Show on Focus" [(ngModel)]="searchTerm" (ionInput)="filterEmployees()" #searchitem name="searchBar" aria-label="searchname" inputId="my-search-input"></ion-searchbar> -->
+     <input type="search" [(ngModel)]="searchTerm" (input)="filterEmployees()"  placeholder="Search " style="padding: 4px 12px;
+    border-radius: 3px;" id="searchitem"/>
+  </ion-item>
+  <ion-button expand="block" color="primary" style="margin: 10px;" (click)="addform()" id="add-button" name="add-name-button">Add</ion-button>  
+</ion-list>
+
+  <ion-grid>
+    <ion-row class="bookstore">
+      <ion-col size="2"><strong>FName</strong></ion-col>
+      <ion-col size="2"><strong>LName</strong></ion-col>
+      <ion-col size="1"><strong>Age</strong></ion-col>
+      <ion-col size="2"><strong>Email</strong></ion-col>
+      <ion-col size="2"><strong>Salary</strong></ion-col>
+      <ion-col size="2"><strong>Department</strong></ion-col>
+      <ion-col size="1"><strong>Action</strong></ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let employee of filteredEmployees ;let i=index" class="bookstore">
+      <ion-col  size="2">{{ employee.firstName }}</ion-col>
+      <ion-col  size="2">{{ employee.lastName }}</ion-col>
+      <ion-col  size="1">{{ employee.age }}</ion-col>
+      <ion-col  size="2">{{ employee.email }}</ion-col>
+      <ion-col  size="2">{{ employee.salary }}</ion-col>
+      <ion-col  size="2">{{ employee.department }}</ion-col>
+      <ion-col size="1">
+        <ion-icon name="pencil" style="cursor: pointer; color: orange;" (click)="edit(employee,i)" id="edit" ></ion-icon>
+        <ion-icon name="trash" style="cursor: pointer; color: red;" (click)="delete(i)" id="delete" ></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row class="pagination-controls" style="align-items: center; justify-content: center; margin-top: 16px;">
+    <ion-button      
+      color="primary"
+      size="small"    >
+      Previous
+    </ion-button>  
+    <ion-label style="font-size: 13px;margin: 0px 30px;">
+      Page {{ 1 }} | Total Rows: {{ 10 }}
+    </ion-label>  
+    <ion-button     
+      color="primary"
+      size="small"
+    >
+      Next
+    </ion-button>
+  </ion-row>  
+</ion-grid>
+</div>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-toolbar>
+    <ion-tabs>
+      <ion-tab-bar slot="bottom" >
+    <ion-tab-button tab="dashboard">
+      <ion-icon name="home" [routerLink]='["/login"]'></ion-icon>
+      <ion-label>Home</ion-label>
+    </ion-tab-button>
+    <ion-tab-button (click)="displaymain()">
+      <ion-icon name="reorder-four-outline"></ion-icon>
+      <ion-label >Menu</ion-label>
+    </ion-tab-button>
+  </ion-tab-bar>   
+  </ion-tabs>
+  </ion-toolbar>
+</ion-footer>
+
+
+

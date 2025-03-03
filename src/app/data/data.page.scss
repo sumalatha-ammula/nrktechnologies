@@ -1,0 +1,261 @@
+ion-range {
+   
+   --bar-background-active:green;
+   --bar-height: 20px;
+  
+   --knob-background: #ffc8dd;
+   --knob-size: 40px;
+   --pin-background: #ffafcc;
+   --pin-color: #fff;
+   --knob-size:0px;
+   --bar-background:#f2f2f2 
+ }
+ #click-triggers{
+   border:1px solid #EFEFEF;
+   border-radius:5px;
+   margin-top:10px !important;
+   padding: 10px !important;
+ }
+ .navbar ul {
+   list-style: none;
+   padding-left: 0;
+ }
+ 
+ .navbar li {
+   padding: 10px;
+   cursor: pointer;
+ }
+ 
+ .navbar li a {
+   text-decoration: none;
+ }
+ 
+
+ 
+ .navbar li .submenu-submenu {
+   padding-left: 20px;
+ }
+ 
+ .navbar li a {
+   font-size: 16px;
+ }
+ 
+ .navbar li:hover {
+   background-color: #f4f4f4;
+ }
+ .navbar ul{
+   display: flex;
+   justify-content: center;
+ }
+ .navbar ul li{
+   background-color:#4CAF50
+
+
+ }
+ .navbar ul li a{
+   color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    font-size: 14px;
+ }
+ .submenu,.submenu-submenu{
+   display: flex;
+   flex-direction: column;
+ }
+ .navbar ul li:active{
+   background-color:#4CAF50
+ }
+ .data  .dateandtime{
+   margin:10px !important;
+   border:1px solid lightgray;
+   border-radius: 5px !important;
+   background: #edeef0 !important;
+ }
+ .data ion-button{
+   background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 5px;
+    --background:#4CAF50
+ }
+ .data ion-item label{
+   color:black;
+ }
+ .data ion-item span{
+   color:black;
+   font-size:15px
+ }
+ .tabs ion-item,.tab2{
+   padding: 10px 12px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+    margin-right: 5px;
+    border-radius: 5px 5px 0 0;
+ }
+ .active-tab{
+   background-color: #006ba1 !important;
+   color: white !important;
+ }
+ .tab2{
+   margin-top:-9px !important
+ }
+ .selctoption div{
+   width:100%
+ }
+ .selctoption div  ion-select{
+   border: 2px solid #0078D7 !important;
+    border-radius: 5px !important;;
+    padding-left: 10px !important;;
+ }
+ .sortable ion-col{
+   padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    margin: 5px;
+    text-align: center;
+    cursor: move;
+ }
+ .sort ion-item{
+   border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 10px;
+    color: #0d6efd;
+
+ }
+ .sort ion-item ion-col{
+   cursor: grab;
+ }
+ .active-select{
+   background: #4CAF50 !important;
+    color: white;
+ }
+ .dragme ion-item ion-button{
+   --background: #4CAF50 !important;
+    color: white;
+    --padding-top: 20px !important;
+    --padding-bottom: 20px !important;
+    --padding-start: 24px !important;
+    --padding-end: 24px !important;
+    font-size: 14px;
+    --border-radius:none !important
+ }
+ .dragme ion-item span{
+   border: 1px dashed lightgray;
+    padding: 30px;
+    margin-top: 25px;
+ }
+ .dragme,.credentials,.login,.search{
+   display: flex;
+    flex-direction: column;
+ }
+ .dragme ion-item,.draggable ion-item,.credentials ion-item{
+   margin-left: auto;
+   margin-right: auto;
+ }
+ .Droppable ion-item{
+   color: #007bff ;
+   font-size: 14px !important;
+ }
+ .activedrop ion-item,.activedrop{
+  color:black !important;
+
+ }
+.activedrop{
+   border:1px dashed #0054e9;
+   border-radius:5px 5px 0px 0px;
+   color:black !important;
+
+}
+.draggable ion-button{
+  --padding-start:20px;
+  --padding-bottom:20px;
+  --padding-top:20px;
+  --padding-end:20px;
+  --background: #0054e9b8 !important;
+}
+.draggable{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.normal-resizable {
+  width: 200px;
+  height: 200px;
+  background: lightblue !important;
+  border: 1px solid #ccc !important;
+  overflow: hidden;
+  resize: both;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
+
+/* Resizable with Min/Max Size */
+.constrained-resizable {
+  width: 200px;
+  height: 200px;
+  background: lightgreen !important;
+  position: relative;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.resize-handle {
+  width: 15px;
+  height: 15px;
+  background: #333 !important;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: se-resize;
+}
+.login button{
+  width: 100%;
+padding-top: 20px;
+padding-bottom: 20px;
+background: #007bff;
+font-weight: bold;
+font-size: 18px;
+color:white;
+border-radius:4px;
+}
+.login ion-input{
+  min-height: 41px !important;
+  --highlight-color:#b3b3b3 !important
+}
+.login ion-item{
+  margin-top:10px !important
+}
+.credentials ion-item{
+  margin-top:-14px !important
+}
+.credentials h6{
+  font-weight:600;
+}
+.credentials p{
+  font-size: 15px;
+  color: #737373;
+
+}
+.login ion-item span{
+  color: #4c68d7 !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+.heading{
+  font-weight:bold !important
+}
+.bookstore ion-col,.feilddata ion-col{
+  border:1px solid lightgray;
+  font-size: 15px;
+
+}
+.bookstore{
+  padding:0px 10px !important
+}
+
+  
